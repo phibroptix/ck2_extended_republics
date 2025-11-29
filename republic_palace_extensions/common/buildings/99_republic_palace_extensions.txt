@@ -1,0 +1,31 @@
+family_palace = {
+    fp_mansion_5 = {
+        desc = fp_mansion_5_desc
+        upgrades_from = fp_mansion_4
+        gold_cost = 10000
+        build_time = 3600
+        icon = "b_palace"
+        ai_creation_factor = 100
+        demesne_size = 1
+    }
+
+    fp_mansion_6 = {
+        desc = fp_mansion_6_desc
+        upgrades_from = fp_mansion_5
+        gold_cost = 20000
+        build_time = 5400
+        icon = "b_palace"
+        ai_creation_factor = 100
+        demesne_size = 1
+    }
+
+    fp_mansion_7 = {
+        desc = fp_mansion_7_desc
+        upgrades_from = fp_mansion_6
+        gold_cost = 50000
+        build_time = 9000
+        icon = "b_palace"
+        ai_creation_factor = 100
+        demesne_size = 1
+    }
+}

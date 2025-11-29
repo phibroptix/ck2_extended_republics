@@ -1,0 +1,123 @@
+fort = {
+    # CHAIN 1: REVENUE & LAW (Tolls -> Deputy -> Sheriff)
+
+    fo_republic_toll_1 = {
+        desc = fo_republic_toll_1_desc
+        gold_cost = 100
+        build_time = 180
+
+        # Only Patricians or Merchant Republics can build these
+        potential = {
+            FROM = {
+                OR = {
+                    is_merchant_republic = yes
+                    is_patrician = yes
+                }
+            }
+        }
+
+        # Generates ~1 gold/year base (pre-modifiers)
+        tax_income = 1
+
+        ai_creation_factor = 100
+    }
+
+    fo_republic_toll_2 = {
+        desc = fo_republic_toll_2_desc
+        upgrades_from = fo_republic_toll_1
+        gold_cost = 300
+        build_time = 365
+
+        trigger = {
+            tech_trade_practices = 3
+        }
+
+        # Generates ~5 gold/year base
+        tax_income = 5
+
+        ai_creation_factor = 100
+    }
+
+    fo_republic_toll_3 = {
+        desc = fo_republic_toll_3_desc
+        upgrades_from = fo_republic_toll_2
+        gold_cost = 600
+        build_time = 500
+
+        trigger = {
+            tech_trade_practices = 6
+        }
+
+        # Generates ~10 gold/year base (Very high!)
+        tax_income = 10
+
+        # Flavor: Reduces revolt risk slightly due to "Sheriff" presence
+        local_revolt_risk = -0.02
+
+        ai_creation_factor = 100
+    }
+
+    # CHAIN 2: DEFENSE & SUPPLY (Ranger Bunks -> Quarters -> Quartermaster)
+
+    fo_republic_rangers_1 = {
+        desc = fo_republic_rangers_1_desc
+        gold_cost = 150
+        build_time = 180
+
+        potential = {
+            FROM = {
+                OR = {
+                    is_merchant_republic = yes
+                    is_patrician = yes
+                }
+            }
+        }
+
+        # Fort Level increase (+2 to bring a base fort up to lvl ~3)
+        fort_level = 2
+
+        # Troops count towards Garrison size.
+        # 100 Light Infantry added to the fort.
+        light_infantry = 100
+
+        ai_creation_factor = 100
+    }
+
+    fo_republic_rangers_2 = {
+        desc = fo_republic_rangers_2_desc
+        upgrades_from = fo_republic_rangers_1
+        gold_cost = 400
+        build_time = 365
+
+        trigger = {
+            tech_fortifications_construction = 3
+        }
+
+        # Cumulative Fort Level (+5 total)
+        fort_level = 5
+
+        # Total Garrison ~500
+        light_infantry = 500
+
+        ai_creation_factor = 100
+    }
+
+    fo_republic_rangers_3 = {
+        desc = fo_republic_rangers_3_desc
+        upgrades_from = fo_republic_rangers_2
+        gold_cost = 800
+        build_time = 730
+
+        trigger = {
+            tech_fortifications_construction = 6
+        }
+
+        # Cumulative Fort Level (+8 total)
+        fort_level = 8
+
+        # Total Garrison ~1000
+        light_infantry = 1000
+
+        ai_creation_factor = 100
+    }
+}

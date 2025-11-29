@@ -1,0 +1,4 @@
+#CODE;ENGLISH;FRENCH;GERMAN;;SPANISH;;;;;;;;;x
+EVTDESC_republic_fort_events.1;Word reaches us from the frontier. With our treasury empty, the wages for the fort's staff have gone unpaid for weeks. Local criminal elements—smugglers and thieves who have long plagued this province—have seized the opportunity. They have ransacked our facilities, stripping the toll booths of copper and burning the ranger barracks to the ground. The infrastructure is lost.;;;;;;;;;;;;;x
+EVTOPTA_republic_fort_events.1;Damn them! We cannot afford to rebuild.;;;;;;;;;;;;;x
+republic_fort_destruction_tooltip;Criminals ransack the Fort, destroying our custom infrastructure.;;;;;;;;;;;;;x

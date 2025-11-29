@@ -1,0 +1,56 @@
+namespace = republic_fort_events
+
+# EVT: Deficit Crime Wave destroys Fort upgrades
+province_event = {
+    id = republic_fort_events.1
+    desc = EVTDESC_republic_fort_events.1
+    picture = GFX_evt_looters
+
+    trigger = {
+        # 1. Must be a Fort here
+        has_fort = yes
+
+        # 2. Must be owned by the player (or AI patrician)
+        owner = {
+            is_patrician = yes
+        }
+
+        # 3. Must have "Crime" elements present
+        OR = {
+            has_province_modifier = smugglers_ring
+            has_province_modifier = highway_robber_band
+            has_province_modifier = thieves_guild
+            }
+        }
+
+        # 4. Must have something to destroy
+        OR = {
+            has_building = fo_republic_toll_1
+            has_building = fo_republic_rangers_1
+        }
+    }
+
+    # MTTH 18 Months ~= 50% chance per year
+    mean_time_to_happen = {
+        months = 18
+    }
+
+    option = {
+        name = EVTOPTA_republic_fort_events.1
+
+        # Determine what is destroyed for the tooltip
+        custom_tooltip = {
+            text = republic_fort_destruction_tooltip
+        }
+
+        # Removing the base building (lvl 1) automatically removes attached upgrades
+        if = {
+            limit = { has_building = fo_republic_toll_1 }
+            remove_building = fo_republic_toll_1
+        }
+        if = {
+            limit = { has_building = fo_republic_rangers_1 }
+            remove_building = fo_republic_rangers_1
+        }
+    }
+}
